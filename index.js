@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send('<h1>Hola Mundo desde Express y Coolify 🚀</h1>');
+  res.send('<h1>Actualizado - Hola Mundo desde Express y Coolify 🚀</h1>');
 });
 
 const port = process.env.PORT || 3000;
