@@ -1,0 +1,18 @@
+name: Deploy to Coolify
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Trigger Coolify Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Deploy via Coolify API
+        run: |
+          curl -X POST "https://coolify.santaserver.com.ar/api/v1/deploy?uuid=xwwkc04ws0kgsk408ookk0ss&force=false" \
+            -H "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}" \
+            -H "Content-Type: application/json"
